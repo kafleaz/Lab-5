@@ -67,7 +67,7 @@ class divi :public mul
     {
         int z;
         displaym();
-        z=x-y;
+        z=x/y;
         cout<<"Division: "<<z; 
     }
     

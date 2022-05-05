@@ -1,52 +1,38 @@
 #include<iostream>
 using namespace std;
-class triangle
+class polygon
 {
+    protected:
     int l,b;
     public:
-    void getdatat()
+    void datain()
     {
         cout<<"Enter l and b: ";
         cin>>l>>b;
     }
-    int setdatat()
-    {
-        return (l*b/2);
-    }
 };
-class rectangle
-{
-    int l,b;
-    public:
-    void getdatar()
-    {
-        cout<<"Enter l and b: ";
-        cin>>l>>b;
-    }
-    int setdatar()
-    {
-        return (l*b);
-    }
-};
-class polygon: public triangle, public rectangle
+class triangle:public polygon 
 {
     public:
-    void getdata()
+    void setdatat()
     {
-        cout<<"For Triangle."<<endl;
-        getdatat();
-        cout<<"For Rectangle."<<endl;
-        getdatar();
+        datain();
+        cout<<"Area of triangle: "<<(l*b/2)<<endl;
     }
-    void display()
+};
+class rectangle: public polygon
+{
+    public:
+    void setdatar()
     {
-        cout<<"Area of triangle: "<<setdatat()<<endl;
-        cout<<"Area of rectangle: "<<setdatar()<<endl;
+        datain();
+        cout<<"Area of rectangle: "<<(l*b)<<endl;
     }
 };
 int main()
 {
-    polygon p;
-    p.getdata();
-    p.display();
+    triangle t;
+    rectangle r;
+    t.setdatat();
+    r.setdatar();
 }

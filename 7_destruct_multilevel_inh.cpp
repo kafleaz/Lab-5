@@ -19,7 +19,7 @@ class am
 class groot: public I, public am
 {
     public:
-    groot()
+    ~groot()
     {
         cout<<"Class groot destructor."<<endl;
     }
